@@ -1,4 +1,224 @@
 ---
-layout: home
-# Index page
+layout: page
 ---
+
+<div class="container">
+    <header>
+        <h1>Hi, I am David.</h1>
+    </header>
+
+    <section>
+        <h5 class="dropdown">
+          <button class="dropdown-btn">
+            About me  <span class="carrot">&#9654;</span>
+          </button>        
+        </h5>
+        <div class="dropdown-content">
+            <p>About me text.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Project spotlight: automated nonprofit data aggregator</h2>
+        <div class="video-container">
+            <video width="560" height="315" controls>
+                <source src="{{ '/assets/videos/990_parser.mp4' | relative_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>        
+    </section>
+
+    <section>
+        <h5 class="dropdown">
+          <button class="dropdown-btn">
+            Learn more  <span class="carrot">&#9654;</span>
+           </button>
+        </h5>
+        <div class="dropdown-content">
+            <p>Learn more text ("To see more, click 'here'").</p>
+        </div>
+    </section>
+</div>
+
+<!-- Ensure the pusheenContainer is present -->
+<div id="pusheenContainer"></div>
+
+<script>
+document.querySelectorAll('.dropdown-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const dropdownContent = button.parentElement.nextElementSibling;
+        dropdownContent.classList.toggle('show');
+
+        const carrot = button.querySelector('.carrot');
+        carrot.classList.toggle('rotated');
+    });
+});
+</script>
+
+<style>
+.container {
+    margin-top: 1px; /* Adjust the top margin as needed */
+    max-width: 100%; /* Ensure the container takes the full width */
+    padding-left: 10px; /* Reduce left padding */
+    padding-right: 10px; /* Reduce right padding */
+}
+
+.container header {
+    margin-bottom: 1px; /* Adjust the bottom margin of the header */
+    padding: 0; /* Remove any default padding */
+}
+
+h1 {
+    margin-bottom: 1px; /* Reduce the bottom margin of the header */
+    padding: 0; /* Remove any default padding */
+}
+
+h5.dropdown, h2 {
+    margin-top: 5px; /* Reduce the top margin of the dropdown header */
+    margin-bottom: 0; /* Remove any bottom margin */
+    padding: 0; /* Remove any default padding */
+}
+
+#main-wrapper {
+    margin-left: 10px; /* Adjust this value to reduce the gap */
+    padding: 0 20px; /* Adjust padding as needed */
+}
+
+@media (max-width: 768px) {
+#main-wrapper {
+    margin-left: 0; /* Remove left margin for mobile */
+    padding: 0 10px; /* Adjust padding for mobile */
+}
+.container {
+    padding-left: 5px; /* Adjust left padding for mobile */
+    padding-right: 5px; /* Adjust right padding for mobile */
+}
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px; /* Adjust the bottom margin of the dropdown button */
+    margin-top: 10px; /* Adjust the top margin of the dropdown button */
+}
+
+.dropdown-content {
+    display: none;
+    padding-left: 20px;
+    margin-top: 5px; /* Adjust the top margin of the dropdown content */
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-top: 5px; /* Adjust the top margin of the video container */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carrot {
+    display: inline-block;
+    transition: transform 0.3s;
+    transform: rotate(0deg); /* Point right by default */
+    font-size: 1em; /* Adjust size */
+    margin-left: 5px; /* Add spacing */
+}
+
+.carrot.rotated {
+    transform: rotate(90deg); /* Point down when rotated */
+}
+
+#pusheenContainer .pusheen {
+  position: absolute;
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  z-index: 9999;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const addPusheenButton = document.querySelector('.fa-parachute-box');
+  const pusheenContainer = document.getElementById('pusheenContainer');
+  const pusheenImages = [
+    'cookie.png', 
+    'donut.png', 
+    'ice_cream.png', 
+    'mcdonalds.png', 
+    'noodles.png', 
+    'phone.png', 
+    'popcorn.png', 
+    'regular.png'
+  ];
+  const pusheenPath = '{{ "/assets/images/pusheens/" | relative_url }}';
+
+  // Check if the event listener is already attached
+  if (!addPusheenButton.dataset.listenerAttached) {
+    addPusheenButton.addEventListener('click', function() {
+      // Select a random Pusheen image
+      const randomImage = pusheenImages[Math.floor(Math.random() * pusheenImages.length)];
+      const pusheenUrl = pusheenPath + randomImage;
+
+      // Create Pusheen image element
+      const pusheen = document.createElement('img');
+      pusheen.src = pusheenUrl;
+      pusheen.classList.add('pusheen');
+
+      // Set initial random positions
+      let posX = Math.random() * (window.innerWidth - 100);
+      let posY = Math.random() * (window.innerHeight - 100);
+
+      // Set initial random velocities
+      let velocityX = (Math.random() - 0.5) * 8; // Adjust speed as needed
+      let velocityY = (Math.random() - 0.5) * 8;
+
+      pusheen.style.left = `${posX}px`;
+      pusheen.style.top = `${posY}px`;
+
+      // Add Pusheen to the container
+      pusheenContainer.appendChild(pusheen);
+
+      function updatePosition() {
+        posX += velocityX;
+        posY += velocityY;
+
+        // Bounce off the edges
+        if (posX <= 0 || posX >= window.innerWidth - 100) {
+          velocityX = -velocityX;
+        }
+        if (posY <= 0 || posY >= window.innerHeight - 100) {
+          velocityY = -velocityY;
+        }
+
+        pusheen.style.left = `${posX}px`;
+        pusheen.style.top = `${posY}px`;
+
+        requestAnimationFrame(updatePosition);
+      }
+
+      updatePosition();
+    });
+
+    // Mark the event listener as attached 
+    addPusheenButton.dataset.listenerAttached = 'true';
+  }
+});
+</script>
