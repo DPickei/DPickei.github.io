@@ -14,7 +14,7 @@ layout: page
           </button>        
         </h5>
         <div class="dropdown-content">
-            <p>About me text.</p>
+            <p>About me text. Test.</p>
         </div>
     </section>
 
@@ -43,17 +43,11 @@ layout: page
 <!-- Ensure the pusheenContainer is present -->
 <div id="pusheenContainer"></div>
 
+<!-- Pass the relative URL to JavaScript -->
 <script>
-document.querySelectorAll('.dropdown-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const dropdownContent = button.parentElement.nextElementSibling;
-        dropdownContent.classList.toggle('show');
-
-        const carrot = button.querySelector('.carrot');
-        carrot.classList.toggle('rotated');
-    });
-});
+  const pusheenPath = "{{ '/assets/images/pusheens/' | relative_url }}";
 </script>
+<script src="{{ '/assets/js/data/pusheen.js' | relative_url }}"></script>
 
 <style>
 .container {
@@ -64,8 +58,8 @@ document.querySelectorAll('.dropdown-btn').forEach(button => {
 }
 
 .container header {
-    margin-bottom: 1px; /* Adjust the bottom margin of the header */
-    padding: 0; /* Remove any default padding */
+    margin-bottom: 10px; /* Adjust the bottom margin of the header */
+    padding: 100; /* Remove any default padding */
 }
 
 h1 {
@@ -77,11 +71,6 @@ h5.dropdown, h2 {
     margin-top: 5px; /* Reduce the top margin of the dropdown header */
     margin-bottom: 0; /* Remove any bottom margin */
     padding: 0; /* Remove any default padding */
-}
-
-#main-wrapper {
-    margin-left: 10px; /* Adjust this value to reduce the gap */
-    padding: 0 20px; /* Adjust padding as needed */
 }
 
 @media (max-width: 768px) {
@@ -153,72 +142,3 @@ h5.dropdown, h2 {
   z-index: 9999;
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const addPusheenButton = document.querySelector('.fa-parachute-box');
-  const pusheenContainer = document.getElementById('pusheenContainer');
-  const pusheenImages = [
-    'cookie.png', 
-    'donut.png', 
-    'ice_cream.png', 
-    'mcdonalds.png', 
-    'noodles.png', 
-    'phone.png', 
-    'popcorn.png', 
-    'regular.png'
-  ];
-  const pusheenPath = '{{ "/assets/images/pusheens/" | relative_url }}';
-
-  // Check if the event listener is already attached
-  if (!addPusheenButton.dataset.listenerAttached) {
-    addPusheenButton.addEventListener('click', function() {
-      // Select a random Pusheen image
-      const randomImage = pusheenImages[Math.floor(Math.random() * pusheenImages.length)];
-      const pusheenUrl = pusheenPath + randomImage;
-
-      // Create Pusheen image element
-      const pusheen = document.createElement('img');
-      pusheen.src = pusheenUrl;
-      pusheen.classList.add('pusheen');
-
-      // Set initial random positions
-      let posX = Math.random() * (window.innerWidth - 100);
-      let posY = Math.random() * (window.innerHeight - 100);
-
-      // Set initial random velocities
-      let velocityX = (Math.random() - 0.5) * 8; // Adjust speed as needed
-      let velocityY = (Math.random() - 0.5) * 8;
-
-      pusheen.style.left = `${posX}px`;
-      pusheen.style.top = `${posY}px`;
-
-      // Add Pusheen to the container
-      pusheenContainer.appendChild(pusheen);
-
-      function updatePosition() {
-        posX += velocityX;
-        posY += velocityY;
-
-        // Bounce off the edges
-        if (posX <= 0 || posX >= window.innerWidth - 100) {
-          velocityX = -velocityX;
-        }
-        if (posY <= 0 || posY >= window.innerHeight - 100) {
-          velocityY = -velocityY;
-        }
-
-        pusheen.style.left = `${posX}px`;
-        pusheen.style.top = `${posY}px`;
-
-        requestAnimationFrame(updatePosition);
-      }
-
-      updatePosition();
-    });
-
-    // Mark the event listener as attached 
-    addPusheenButton.dataset.listenerAttached = 'true';
-  }
-});
-</script>
