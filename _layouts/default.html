@@ -15,6 +15,15 @@ layout: compress
 <!-- site.alt_lang can specify a language different from the UI -->
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
+<!-- NOTICE: Adjustment made the style element below has been added to decrease
+ the gap between the sidebar and main content -->
+  <style>
+    @media (min-width: 1650px) {
+      #main-wrapper .container {
+        max-width: 1650px; /* Adjust this value to decrease the margin */
+      }
+    }
+  </style>
 
   <body data-pusheen-url="{{ 'assets/images/popcorn_pusheen.png' | relative_url }}">
     {% include sidebar.html lang=lang %}
@@ -73,13 +82,7 @@ layout: compress
     {% if site.pwa.enabled %}
       {% include_cached notification.html lang=lang %}
     {% endif %}
-
-    <!-- Add Pusheen Button and Container -->
-    <button id="addPusheen">
-      <i class="fa-solid fa-parachute-box"></i> Add Pusheen
-    </button>
-    <div id="pusheenContainer"></div>
-
+    
     <!-- JavaScripts -->
     {% include js-selector.html lang=lang %}
 
