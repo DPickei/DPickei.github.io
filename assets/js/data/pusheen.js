@@ -1,13 +1,3 @@
-document.querySelectorAll('.dropdown-btn').forEach(button => {
-  button.addEventListener('click', () => {
-      const dropdownContent = button.parentElement.nextElementSibling;
-      dropdownContent.classList.toggle('show');
-
-      const carrot = button.querySelector('.carrot');
-      carrot.classList.toggle('rotated');
-  });
-});
-
 document.addEventListener('DOMContentLoaded', function() {
 const addPusheenButton = document.querySelector('.fa-parachute-box');
 const pusheenContainer = document.getElementById('pusheenContainer');
