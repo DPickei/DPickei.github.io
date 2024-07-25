@@ -29,8 +29,8 @@ if (!addPusheenButton.dataset.listenerAttached) {
     pusheen.classList.add('pusheen');
 
     // Set initial random positions
-    let posX = Math.random() * (window.innerWidth - 100);
-    let posY = Math.random() * (window.innerHeight - 100);
+    let posX = Math.random() * (window.innerWidth - 500);
+    let posY = Math.random() * (window.innerHeight - 50);
 
     // Set initial random velocities
     let velocityX = (Math.random() - 0.5) * 8; // Adjust speed as needed
@@ -47,10 +47,10 @@ if (!addPusheenButton.dataset.listenerAttached) {
       posY += velocityY;
 
       // Bounce off the edges
-      if (posX <= 0 || posX >= window.innerWidth - 100) {
+      if (posX <= 0 || posX >= window.innerWidth - 200) {
         velocityX = -velocityX;
       }
-      if (posY <= 0 || posY >= window.innerHeight - 100) {
+      if (posY <= 0 || posY >= window.innerHeight - 200) {
         velocityY = -velocityY;
       }
 
