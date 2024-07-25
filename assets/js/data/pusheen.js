@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-const addPusheenButton = document.querySelector('.fa-parachute-box');
+const addPusheenButton = document.querySelector('.fa-utensils');
 const pusheenContainer = document.getElementById('pusheenContainer');
 const pusheenImages = [
   'cookie.png', 

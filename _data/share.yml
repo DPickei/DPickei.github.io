@@ -21,7 +21,7 @@ platforms:
     link: "https://www.linkedin.com/sharing/share-offsite/?url=URL"
 
   - type: fun-feature
-    icon: 'fa-solid fa-parachute-box'
+    icon: 'fa-solid fa-utensils'
   #
   # - type: Weibo
   #   icon: "fab fa-weibo"
