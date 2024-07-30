@@ -23,8 +23,8 @@ search:
   no_results: Oops! No results found.
 
 panel:
-  lastmod: Recently Updated
-  trending_tags: Trending Tags
+  lastmod: Recently Hi
+  trending_tags: Tags # ADJUSTMENT: 'Trending Tags' changed to 'Tags'
   toc: Contents
 
 copyright:

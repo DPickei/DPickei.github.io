@@ -49,11 +49,11 @@ layout: compress
 
           <!-- panel -->
            <!-- see 'https://chatgpt.com/c/f5e1b07d-32d4-4713-a474-a9eea2e98d76' for how to adjust this -->
-           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-                <!-- Intentionally left blank -->
+              
             </div>
-          
+
             {% for _include in layout.panel_includes %}
               {% assign _include_path = _include | append: '.html' %}
               {% include {{ _include_path }} lang=lang %}

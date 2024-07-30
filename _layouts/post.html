@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post_default
 refactor: true
 panel_includes:
   - toc
@@ -41,13 +41,13 @@ tail_includes:
         {% if page.image.lqip %}
           {%- capture lqip -%}lqip="{{ page.image.lqip }}"{%- endcapture -%}
         {% endif %}
-
-        <div class="mt-3 mb-3">
+        <!-- ADJUSTMENT: Deleted thumbnail from being at the top of a post automatically -->
+        <!-- <div class="mt-3 mb-3">
           <img {{ src }} {{ class }} {{ alt }} w="1200" h="630" {{ lqip }}>
           {%- if page.image.alt -%}
             <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>
           {%- endif -%}
-        </div>
+        </div> -->
       {% endif %}
 
       <div class="d-flex justify-content-between">
@@ -75,6 +75,10 @@ tail_includes:
               <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
             {% endif %}
           </em>
+
+          <!-- read time -->
+          &bull;
+          {% include read-time.html content=content prompt=true lang=lang %}
         </span>
 
         <div>
@@ -86,10 +90,7 @@ tail_includes:
               </em>
               {{ site.data.locales[lang].post.pageview_measure }}
             </span>
-          {% endif %}
-
-          <!-- read time -->
-          {% include read-time.html content=content prompt=true lang=lang %}
+          {% endif %}          
         </div>
       </div>
     </div>
