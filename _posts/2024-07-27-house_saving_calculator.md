@@ -22,7 +22,7 @@ image:
 </video>
 
 ## How to use
-1. [Download the Excel file](/assets/lib/home_saving_calculator.xlsx)
+1. [Download the Excel file](/assets/excel/home_saving_calculator.xlsx)
 2. Fill in the green cells (see the demo above for reference)
 
 ## Why I made this
