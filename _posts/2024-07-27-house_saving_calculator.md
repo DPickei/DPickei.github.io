@@ -16,7 +16,7 @@ image:
 
 ## Demo
 
-<video width="900" height="525" controls>
+<video width="360" height="210" controls>
   <source src="/assets/videos/house_buying_calc_clip.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
