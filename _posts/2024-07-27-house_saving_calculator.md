@@ -41,6 +41,7 @@ Therefore, the purpose of this calculator lies in the bottom graph, which tests 
 ## Findings
 
 - As salary decreases linearly, the time it takes to afford a home approximates an exponential increase. This is illustrated by the steep increase in the slope of the second graph. It may take much longer to save for a house with a slightly lower annual savings amount.
+  - This was an unanticipated finding, but is easily the most impactful takeaway from this project.
 
 - The exercise of entering the input values alone is a good reality check. Seeing how much your ideal house would cost, or estimating how much you currently save, is useful clarity to have.
 
@@ -48,7 +49,7 @@ Therefore, the purpose of this calculator lies in the bottom graph, which tests 
 
 Despite home ownership being the largest financial milestone in a person's life, a conscious intention towards achieving this milestone is often brushed off. Worse, rather than admitting such, which would raise alarm bells, misleading intuitions fill in to ease stress. For example, opting for cheaper groceries, cutting a Netflix subscription, or using coupons. Even though other approaches may yield higher returns relative to effort.
 
-This project does not unequivocally aim to convince the user to save or earn more. Many people make a lot of money but have little free time. It may be in their interest to see that the nature of saving conversely follows a logarithmic curve as income increases.
+This project does not unequivocally aim to convince the user to save or earn more. Many people make a lot of money, but are lacking in free time or general quality of life due to their work. It may be in their interest to see that time to hit a savings target conversely follows a logarithmic curve as income increases.
 
 ## Notes
 This is not a perfectly precise model. The importance is not exact accuracy. Even if the outputs were perfectly accurate, no user could precisely know their exact savings. The key value of this model lies in illustrating the approximately exponential / logarithmic nature of the time needed to save as income decreases / increases.
