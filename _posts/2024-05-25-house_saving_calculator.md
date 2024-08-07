@@ -1,8 +1,8 @@
 ---
 title: "\"How long until I can afford a home?\""
 description: "The most comprehensive savings calculator online"
-date: 2024-07-28 09:49:00 +0800
-categories: []
+date: 2024-05-25 09:49:00 +0800
+categories: [Excel]
 tags: [Excel]
 pin: true
 math: true
@@ -25,7 +25,7 @@ image:
 1. [Download the Excel file](/assets/excel/home_saving_calculator.xlsx)
 2. Fill in the green cells (see the demo above for reference)
 
-## Why I made this
+## Why was this tool made?
 Home saving calculators already exist online. However, they often omit important variables:
 
 - Year-over-year lifestyle creep

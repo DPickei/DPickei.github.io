@@ -93,12 +93,13 @@ refactor: true
                 {% endif %}
               </div>
 
-              {% if post.pin %}
+              <!-- ADJUSTMENT: Removed pin on links -->
+              <!-- {% if post.pin %}
                 <div class="pin ms-1">
                   <i class="fas fa-thumbtack fa-fw"></i>
                   <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
                 </div>
-              {% endif %}
+              {% endif %} -->
             </div>
             <!-- .post-meta -->
           </div>
