@@ -43,11 +43,11 @@ Get metrics in 3 ways
 
 If I were to build this dashboard again
 : 
-1. Automate as much as possible. All user input is a form of error. Every click and button press should be scrutinized.
-2. Centralize your data. An excel file of 20 spreadsheets and 7 tables in Power Query is prone to errors, shoot for a single database
+1. Automate as much as possible. Treat all user input as a form of error. Every click and button press should be scrutinized. MS Office can be restrictive to this, I'd shoot for alternative tools to automate processes.
+2. Centralize data. The more branches and offshoots in your ETL process, the more prone to errors it will be.
 3. I'd prefer to try the following tools for a similar project in the future:[^fn2]
-- **Data entry:** Probably still Excel \| Users were familiar with Excel, and it didn't have any major limitations for entry. I'd be open to other options though.
-- **Data manipulation:** Python > Excel \| Excel is great for general purpose use. But a large volume of data manipulated in excel is either very slow if transformed in a single spreadsheet via formulas or is very hard to customize if done via Power Query
+- **Data entry:** Probably still Excel \| Users were familiar with Excel, and it didn't have any major limitations for entry. Though I'd be open to other options.
+- **Data manipulation:** Python > Excel \| Excel is great for general purpose use. But a large volume of moderate manipulation in excel is either very slow if transformed in a single spreadsheet via formulas or tedious to customize if done via Power Query.
 - **Data visualization:** Tableau > PowerBI \| PowerBI is a fine tool. But it feels limited in it's constraints to Azure (especially for automation), smaller community, and customizations. 
 - **General automation:** Python > Power Automate \| Power Automate had some odd limitations. Like being unable to automate desktop PowerBI refreshes. I may still opt for PA for email automation, since it was easy to setup.
   
