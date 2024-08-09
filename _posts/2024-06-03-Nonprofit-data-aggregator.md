@@ -22,11 +22,11 @@ image:
 </video>
 
 ## About
-This tool automates the collection of various data points across nonprofit public filings (990s)
+This tool automates the collection of various data points from nonprofit public filings (990s).
 
-User enters an EIN (nonprofit ID), the program creates a csv/db file of personnel information of the board for each EIN
+User enters an EIN (nonprofit ID), and the program creates a CSV/DB file containing personnel information of the board for each EIN.
 
-This was originally built for a wealth management firm, but has since been refactored for general purpose use
+This was originally built for a wealth management firm, but has since been refactored for general purpose use.
 
 ## Data points collected:
 - "person_name": The name of the board member
@@ -40,14 +40,14 @@ This was originally built for a wealth management firm, but has since been refac
 The columns above represent data points currently collected. However, any element within the 990 XML files can be extracted.
 
 ## Why was this tool made?
-This tool was made to allow for comprehensive collection of data that nonprofits disclose.
+This tool was made to allow comprehensive collection of data that nonprofits disclose.
 
 The existing [API](https://projects.propublica.org/nonprofits/api) from [ProPublica](https://www.propublica.org/) carries two restrictions that served as inspiration for the creation of this tool.
 
-1. Rate limits on the amount of requests that can be made
+1. Rate limits on the amount of requests that can be made.
 
-2. Limited elements can be captured by the API. Parsing the XML files directly allows the user to filter and collect 990 data based on any attribute a nonprofit discloses in their 990.
+2. Limited elements can be captured by the API. Parsing the XML files directly allows the user to filter and collect 990 data based on any attribute a nonprofit discloses in its 990.
 
 ## How to use
 
-See [here](https://github.com/DPickei/nonprofit_data_scraper) for the project repository
+See [here](https://github.com/DPickei/nonprofit_data_scraper) for the project repository.
