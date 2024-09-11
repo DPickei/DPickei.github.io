@@ -4,7 +4,7 @@ description: "The most comprehensive home savings calculator online"
 date: 2024-05-25 09:49:00 +0800
 categories: [Excel]
 tags: [Excel]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:
@@ -22,7 +22,7 @@ image:
 </video>
 
 ## How to use
-1. [Download the Excel file](/assets/excel/home_saving_calculator.xlsx)
+1. [Download the Excel file](assets/post_files/house_saving_calculator.xlsx)
 2. Fill in the green cells (see the demo above for reference)
 
 ## Why was this tool made?

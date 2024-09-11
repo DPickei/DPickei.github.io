@@ -23,8 +23,8 @@ search:
   no_results: Oops! No results found.
 
 panel:
-  lastmod: Recently Hi
-  trending_tags: Tags # ADJUSTMENT: 'Trending Tags' changed to 'Tags'
+  # lastmod: Recently Updated ADJUSTMENT: Hidden lastmod
+  trending_tags: Tags
   toc: Contents
 
 copyright:
@@ -34,15 +34,13 @@ copyright:
     name: CC BY 4.0
     link: https://creativecommons.org/licenses/by/4.0/
 
-# Displayed in the footer
-copyright:
-  brief: '<a href="https://github.com/cotes2020/jekyll-theme-chirpy?tab=MIT-1-ov-file#readme" style="text-decoration: none;">Some rights reserved.</a>'
+  # Displayed in the footer
+  brief: Some rights reserved.
   verbose: >-
     Except where otherwise noted, the blog posts on this site are licensed
     under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
 
-
-meta: Using the :THEME theme for :PLATFORM.
+# meta: Using the :THEME theme for :PLATFORM.
 
 not_found:
   statment: Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.

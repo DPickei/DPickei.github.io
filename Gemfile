@@ -2,10 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.0", ">= 7.0.1"
-gem 'csv'
-gem 'base64'
-gem 'listen', '~> 3.0'
+gemspec
 
 group :test do
   gem "html-proofer", "~> 5.0"

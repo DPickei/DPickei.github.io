@@ -4,7 +4,7 @@ description: "Econometrics research into one of the most important indicators of
 date: 2021-05-06 09:48:00 +0800
 categories: [Stata]
 tags: [Stata]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

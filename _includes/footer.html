@@ -11,17 +11,11 @@
     {{- '©' }}
     <time>{{ 'now' | date: '%Y' }}</time>
 
-    <em class="fst-normal">{{ site.social.name }}</em>.
-
-    <!--     
-    Originally was the below, linking to github. Removed hyperlink.
-
     {% if site.social.links %}
       <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
     {% else %}
       <em class="fst-normal">{{ site.social.name }}</em>.
-    {% endif %} 
-    -->
+    {% endif %}
 
     {% if site.data.locales[include.lang].copyright.brief %}
       <span
@@ -33,7 +27,7 @@
       </span>
     {% endif %}
   </p>
-  <!-- 
+
   <p>
     {%- capture _platform -%}
       <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
@@ -52,12 +46,4 @@
 
     {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
   </p>
-   -->
 </footer>
-
-<style>
-  .fst-normal {
-    font-weight: normal;
-    font-style: italic; /* Ensures the text remains italicized, as <em> typically does */
-  }
-</style>

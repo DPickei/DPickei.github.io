@@ -4,7 +4,7 @@ description: "Automation built for a wealth management firm. Cut time spent on c
 date: 2024-07-28 09:49:00 +0800
 categories: [Python, SQL, Excel, Google Sheets]
 tags: [Python, SQL, Excel, Google Sheets]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

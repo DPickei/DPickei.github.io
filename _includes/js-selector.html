@@ -92,8 +92,7 @@
 {% if jekyll.environment == 'production' %}
   <!-- PWA -->
   {% if site.pwa.enabled %}
-    <!-- ADJUSTMEN: used to be app instead of page in the code below -->
-    <script defer src="{{ '/assets/js/dist/page.min.js' | relative_url }}"></script> 
+    <script defer src="{{ 'app.min.js' | relative_url }}"></script>
   {% endif %}
 
   <!-- Web Analytics -->

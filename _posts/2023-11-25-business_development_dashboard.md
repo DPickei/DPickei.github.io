@@ -4,7 +4,7 @@ description: ""
 date: 2023-11-25 09:49:00 +0800
 categories: [Excel, PowerBI, PowerQuery, PowerAutomate]
 tags: [Excel, PowerBI, PowerQuery, PowerAutomate]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

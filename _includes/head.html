@@ -51,26 +51,11 @@
   {{ seo_tags }}
 
   <title>
-    {%- if page.layout == 'page' -%}
-      David Pickei
-    {%- else -%}
-      {{ page.title | append: ' | ' }}
-    {%- endif -%}
-    {{ site.title }}
-  </title>  
-
-  <!-- 
-  Title was originally the following
-
-    <title>
     {%- unless page.layout == 'home' -%}
       {{ page.title | append: ' | ' }}
     {%- endunless -%}
     {{ site.title }}
   </title>
-
-  This dynamically updated to the _config file.
-  -->
 
   {% include_cached favicons.html %}
 

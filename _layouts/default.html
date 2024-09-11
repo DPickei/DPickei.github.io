@@ -12,26 +12,11 @@ layout: compress
   {% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
 {% endif %}
 
-<!-- site.alt_lang can specify a language different from the UI -->
+<!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
-<!-- NOTICE: Adjustment made the style element below has been added to decrease
- the gap between the sidebar and main content -->
-  <style>
-    @media (min-width: 1650px) {
-      #main-wrapper .container {
-        max-width: 1650px; /* Adjust this value to decrease the margin */
-      }
-    }
-    #pusheenContainer .pusheen {
-    position: absolute;
-    width: 100px; /* Adjust size as needed */
-    height: auto;
-    z-index: 9999;
-  }
-  </style>
 
-  <body data-pusheen-url="{{ 'assets/images/popcorn_pusheen.png' | relative_url }}">
+  <body>
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">
@@ -48,12 +33,12 @@ layout: compress
           </main>
 
           <!-- panel -->
-           <!-- see 'https://chatgpt.com/c/f5e1b07d-32d4-4713-a474-a9eea2e98d76' for how to adjust this -->
-           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-                <!-- Intentionally left blank -->
+              {% include_cached update-list.html lang=lang %}
+              {% include_cached trending-tags.html lang=lang %}
             </div>
-          
+
             {% for _include in layout.panel_includes %}
               {% assign _include_path = _include | append: '.html' %}
               {% include {{ _include_path }} lang=lang %}
@@ -88,19 +73,10 @@ layout: compress
     {% if site.pwa.enabled %}
       {% include_cached notification.html lang=lang %}
     {% endif %}
-    
+
     <!-- JavaScripts -->
     {% include js-selector.html lang=lang %}
 
     {% include_cached search-loader.html lang=lang %}
-
-    <!-- Ensure the pusheenContainer is present -->
-    <div id="pusheenContainer"></div>
-
-    <!-- Pass the relative URL to JavaScript -->
-    <script>
-      const pusheenPath = "{{ '/assets/images/pusheens/' | relative_url }}";
-    </script>
-    <script src="{{ '/assets/js/data/pusheen.js' | relative_url }}"></script>
   </body>
 </html>
