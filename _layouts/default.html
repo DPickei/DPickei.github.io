@@ -1,11 +1,9 @@
 ---
 layout: compress
 ---
-
 <!doctype html>
 
 {% include origin-type.html %}
-
 {% include lang.html %}
 
 {% if site.theme_mode %}
@@ -17,6 +15,29 @@ layout: compress
   {% include head.html %}
 
   <body>
+    <div id="pusheenContainer"></div>
+
+    <style>
+      #pusheenContainer {
+        position: fixed; /* Fixed relative to the viewport */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Allows clicks to pass through */
+        overflow: hidden; /* Prevents scrollbars from appearing */
+        z-index: 9998; /* Just below the pusheen images */
+      }
+
+      .pusheen {
+        position: absolute;
+        width: 100px; /* Adjust as needed */
+        height: auto;
+        z-index: 9999;
+        pointer-events: none; /* Prevents Pusheen images from capturing mouse events */
+      }
+    </style>
+
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">
@@ -76,7 +97,9 @@ layout: compress
 
     <!-- JavaScripts -->
     {% include js-selector.html lang=lang %}
-
     {% include_cached search-loader.html lang=lang %}
+
+    <!-- Include Pusheen script at the end -->
+    <script src="{{ '/assets/js/data/pusheen.js' | relative_url }}"></script>
   </body>
 </html>
