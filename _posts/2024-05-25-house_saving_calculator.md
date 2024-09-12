@@ -22,7 +22,7 @@ image:
 </video>
 
 ## How to use
-1. [Download the Excel file](assets/post_files/house_saving_calculator/home_saving_calculator.xlsx)
+1. [Download the Excel file](/assets/post_files/house_saving_calculator/home_saving_calculator.xlsx)
 2. Fill in the green cells (see the demo above for reference)
 
 ## Why was this tool made?
