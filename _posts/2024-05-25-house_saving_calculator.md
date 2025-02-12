@@ -1,6 +1,6 @@
 ---
 title: "\"How long until I can afford a home?\""
-description: "The most comprehensive home savings calculator online"
+description: "Not very technical. But useful"
 date: 2024-05-25 09:49:00 +0800
 categories: [Excel]
 tags: [Excel]

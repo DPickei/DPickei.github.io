@@ -25,3 +25,5 @@ package-lock.json
 _sass/dist
 assets/js/dist
 9.11.2024_backup
+
+# .venv

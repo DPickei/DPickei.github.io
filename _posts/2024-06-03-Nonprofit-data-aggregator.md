@@ -1,6 +1,6 @@
 ---
-title: "Nonprofit data aggregator"
-description: "Automation built for a wealth management firm. Cut time spent on client search by >99%"
+title: "Nonprofit data parser"
+description: "Automated client search for a company. Cut time spent by >99%"
 date: 2024-07-28 09:49:00 +0800
 categories: [Python, SQL, Excel, Google Sheets]
 tags: [Python, SQL, Excel, Google Sheets]
